@@ -33,8 +33,6 @@ internal partial class Program
 
         if (TryFindModuleFromRunningGame(out var gameDllPath))
         {
-            AnsiConsole.WriteLine();
-
             if (AnsiConsole.Confirm("[Yellow]Is this correct?[/]", true))
             {
                 dllPath = gameDllPath;
@@ -43,6 +41,8 @@ internal partial class Program
             {
                 dllPath = GetDllPathFromPrompt();
             }
+
+            AnsiConsole.WriteLine();
         }
         else
         {
